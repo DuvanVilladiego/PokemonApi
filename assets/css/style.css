@@ -16,6 +16,11 @@
   margin-top: 150px;
 }
 
+ol, ul {
+  padding-left: 0px;
+  margin-bottom: 0rem;
+}
+
 body {
   background-color: #263238;
 }
