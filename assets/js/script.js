@@ -31,6 +31,15 @@ const dibujarData = (data) => {
   });
 };
 
+//consumir API por tipo del pokemon
+const tiposPokemon= (tipos) => {
+  let html = ""
+  tipos.forEach((tPoke) => {
+    html += `<div class="${tPoke.type.name} tipos"><p>${tPoke.type.name}</p></div>`
+  })
+  return html
+}
+
 //Dibujar cards
 const pokeinfo = (pokemon) => {
   let html =  `
@@ -39,6 +48,12 @@ const pokeinfo = (pokemon) => {
         <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="Imagen de un ${pokemon.name}">
         <div class="card-body">
           <h5 class="card-title">${pokemon.name}</h5>
+          <div>
+            <h5>Tipos:</h5>
+            <div class="card_flex">
+              ${tiposPokemon(pokemon.types)}
+            </div>
+          </div>
         </div>
       </div>
     </div>
